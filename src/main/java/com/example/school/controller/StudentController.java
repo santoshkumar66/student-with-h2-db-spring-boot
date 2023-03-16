@@ -33,6 +33,13 @@ public class StudentController {
     public Student addStudent(@RequestBody Student student){
         return studentService.addStudent(student);
     }
+    @PostMapping("/students/bulk")
+
+    public String addMultipleStudents(@RequestBody ArrayList<Student> studentList) {
+
+        return studentService.addMultipleStudents(studentList);
+    }
+
     @PutMapping("/students/{studentId}")
 
     public Student updateStudent(@PathVariable("studentId") int studentId, @RequestBody Student student){
